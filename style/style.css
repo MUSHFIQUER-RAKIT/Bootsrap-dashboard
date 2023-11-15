@@ -62,8 +62,19 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* navbar search bar start  */
+/* .backgraoundColor {
+  background-image: linear-gradient(
+    to top,
+    #1e3c72 0%,
+    #1e3c72 1%,
+    #2a5298 100%
+  ) !important;
+} */
 
+/* navbar search bar start  */
+.navbar-collapse {
+  z-index: 1000;
+}
 .search-box {
   width: 0;
   height: 0;
@@ -182,12 +193,6 @@ body {
 
 /* dashboard fixed-sidebar start */
 
-.fixed-sidebar {
-  position: fixed;
-  height: 100vh;
-  /* box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05); */
-}
-
 .dash-item li {
   padding: 0.5rem;
   border-radius: 8px;
@@ -231,3 +236,99 @@ body {
   transition: all 0.5s;
 }
 /* dashboard fixed-sidebar end */
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  padding-top: 50px;
+  z-index: 90;
+}
+.content {
+  margin-left: 100px;
+  margin-top: 70px;
+  z-index: 80;
+}
+.side2 {
+  transform: translatex(-1000px);
+  width: 0;
+  transition: all 0.5s;
+  padding-top: 15px;
+  opacity: 0;
+}
+.sidebar:hover .side2 {
+  transform: translatex(0);
+  width: initial;
+  transition: all 0.3s;
+  transition: opacity 1s;
+  opacity: 1;
+  overflow: hidden;
+}
+@media only screen and (max-width: 991px) {
+  .sidebar-section {
+    position: absolute;
+    left: -500px;
+  }
+  .content {
+    margin-left: 0px;
+    margin-top: 60px;
+  }
+
+  .expaned .sidebar-section {
+    position: absolute !important;
+    left: 0px !important;
+    top: 0;
+  }
+  .expaned .side2 {
+    transform: translatex(0px);
+    width: initial;
+    transition: all 0.5s;
+    padding-top: 15px;
+    opacity: 1;
+  }
+  .content {
+    margin-left: 0px !important;
+    margin-top: 60px;
+  }
+}
+
+.expaned .side2 {
+  transform: translatex(0px);
+  width: initial;
+  transition: 0.5s;
+  transition: opacity 1s;
+  opacity: 1;
+  overflow: hidden;
+}
+.expaned .content {
+  margin-left: 350px;
+  transition: 0.5s;
+}
+.expaned .alert-dismissible {
+  display: none;
+  opacity: 0;
+}
+
+/* three_card_section :start  */
+
+.three_card1 {
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+}
+.three_card2 {
+  background-image: radial-gradient(
+    circle 248px at center,
+    #16d9e3 0%,
+    #30c7ec 47%,
+    #46aef7 100%
+  );
+}
+.three_card3 {
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+.three_card4 {
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+/* <!-- pie chart section  --> */
+.pie-chart {
+  height: 75vh;
+}
